@@ -1,22 +1,34 @@
+---
+import '@fontsource-variable/geist';
+import geistWoff2 from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url';
+
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <meta name="generator" content={Astro.generator}/>
+    <title>Maciej Koziara | Software Developer</title>
+    <link rel="preload" as="font" type="font/woff2" href={geistWoff2} crossorigin="anonymous"/>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+<Navbar/>
+<slot/>
+<Footer/>
+</body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        min-height: 100vh;
+    }
 </style>
