@@ -1,49 +1,55 @@
 ---
-import '@fontsource-variable/geist';
-import geistWoff2 from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url';
+import "@fontsource-variable/geist";
+import geistWoff2 from "@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url";
 
-import '../styles/global.css';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title?: string;
   description?: string;
 }
 
-const { 
+const {
   title = "Maciej Koziara | Software Developer",
-  description = "Personal website of Maciej Koziara, a software developer with experience in both backend and frontend technologies."
+  description = "Personal website of Maciej Koziara, a software developer with experience in both backend and frontend technologies.",
 } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-    <meta name="generator" content={Astro.generator}/>
-    <meta name="description" content={description}/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
     <title>{title}</title>
-    <link rel="preload" as="font" type="font/woff2" href={geistWoff2} crossorigin="anonymous"/>
-</head>
-<body class="bg-white text-gray-900 font-sans">
-<div class="min-h-screen flex flex-col">
-  <Navbar/>
-  <main id="main-content" class="flex-grow">
-    <slot/>
-  </main>
-  <Footer/>
-</div>
-</body>
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href={geistWoff2}
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-white text-gray-900 font-sans">
+    <div class="min-h-screen flex flex-col">
+      <Navbar />
+      <main id="main-content" class="flex-grow">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
 </html>
 
 <style>
-    html,
-    body {
-        margin: 0;
-        width: 100%;
-        min-height: 100vh;
-    }
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+  }
 </style>
